@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="assets/ccs/main.css">
+
+    <title>Actualización de Sucursal</title>
+</head>
+<body>
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Actualización de Sucursales</h1>
+            <div class="card-body">
+                <form th:action="@{/branch/update/{id}(id=${branch.pk_SucursalID})}" th:object="${branch}" method="POST">
+                    <div class="form-group">
+                        <label>Nom: </label>
+                        <input type="text" name="name" th:field="*{name}" class="form-control" placeholder required maxlength="30">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>País: </label>
+                        <input type="text" name="country" th:field="*{country}" class="form-control" placeholder required maxlength="30">
+                    </div>
+                    <br>
+                    <div class="box-footer">
+                        <button class="submit btn btn-outline-primary">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
